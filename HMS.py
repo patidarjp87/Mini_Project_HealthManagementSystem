@@ -4,22 +4,22 @@ def getdate():
     return datetime.datetime.now()
 choice=input('what do you want to do lock or retrieve..?')
 if choice.lower()=='lock':
- p=input('what do you want to lock...diet information of exercise information')
+ p=input('what do you want to lock...diet information or exercise information')
  if p.lower()=='diet':   
     n=input('whom diet information do you want to lock select any one from jp,hp,op')
     info=input('Enter information')
     if n=='jp':
-        f=open('f1.txt','a')
+        f=open('jpdiet.txt','a')
         k=str(getdate())+' '+ info
         f.write(k)
         f.close()
     elif n=='hp':
-        f=open('f2.txt','a')
-        k=str(getdate())+ ' '+info
+        f=open('hpdiet.txt','a')
+        k=str(getdate())+ ' ' +info
         f.write(k)
         f.close()
     elif n=='op':
-        f=open('f3.txt','a')
+        f=open('opdiet.txt','a')
         k=str(getdate())+' '+ info
         f.write(k)
         f.close()
@@ -29,17 +29,17 @@ if choice.lower()=='lock':
      n=input('whom exercise information do you want to lock select any one from jp,hp,op')
      info=input('Enter information')
      if n=='jp':
-        f=open('f11.txt','a')
+        f=open('jpexercise.txt','a')
         k=str(getdate())+' '+info
         f.write(k)
         f.close()
      elif n=='hp':
-        f=open('f22.txt','a')
+        f=open('hpexercise.txt','a')
         k=str(getdate())+' '+ info
         f.write(k)
         f.close()
      elif n=='op':
-        f=open('f33.txt','a')
+        f=open('opexercise.txt','a')
         k=str(getdate())+' '+ info
         f.write(k)
         f.close()
@@ -48,26 +48,26 @@ if choice.lower()=='lock':
  else:
       print('Error:InvalidInformation')
 elif choice.lower()=='retrieve':
-  p=input('what do you want to retrieve...diet information of exercise information')
+  p=input('what do you want to retrieve...diet information or exercise information')
   if p.lower()=='diet':   
     n=input('whom diet information do you want to retrieve select any one from jp,hp,op')
     if n=='jp':
         try:
-         f=open('f1.txt','r')
+         f=open('jpdiet.txt','r')
          print(f.read())
          f.close()
         except:
             print('File is Empty')
     elif n=='hp':
         try:
-         f=open('f2.txt','r')
+         f=open('hpdiet.txt','r')
          print(f.read())
          f.close()
         except:
             print('File is Empty')
     elif n=='op':
         try:
-         f=open('f3.txt','r')
+         f=open('opdiet.txt','r')
          print(f.read())
          f.close()
         except:
@@ -78,21 +78,21 @@ elif choice.lower()=='retrieve':
       n=input('whom exercise information do you want to retrieve select any one from jp,hp,op')
       if n=='jp':
         try:
-         f=open('f11.txt','r')
+         f=open('jpexercise.txt','r')
          print(f.read())
          f.close()
         except:
             print('File is Empty')
       elif n=='hp':
         try:
-         f=open('f22.txt','r')
+         f=open('hpexercise.txt','r')
          print(f.read())
          f.close()
         except:
             print('File is Empty')
       elif n=='op':
         try:
-         f=open('f33.txt','r')
+         f=open('opexercise.txt','r')
          print(f.read())
          f.close()
         except:
